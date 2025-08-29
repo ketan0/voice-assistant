@@ -363,6 +363,12 @@ async def handle_function_call(call_id: str, event: Dict[str, Any]):
             }
             await websocket.send(json.dumps(result_message))
             logger.info(f"Call {call_id} - Sent function result back to WebSocket")
+            # request another response with response.create
+            response_message = {
+                "type": "response.create",
+            }
+            await websocket.send(json.dumps(response_message))
+            logger.info(f"Call {call_id} - Sent response.create message back to WebSocket")
         
     except Exception as e:
         logger.error(f"Call {call_id} - Error handling function call: {e}")
