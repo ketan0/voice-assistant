@@ -1,0 +1,30 @@
+# Core web framework
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+
+# OpenAI API client
+openai>=1.45.0
+
+# Twilio API client
+twilio>=9.0.0
+
+# WebSocket support
+websockets>=12.0
+
+# HTTP requests
+requests>=2.31.0
+
+# Form data handling
+python-multipart>=0.0.6
+
+# Environment variable management
+python-dotenv>=1.0.0
+
+# JSON and data handling
+pydantic>=2.5.0
+
+# Tool calling integration
+composio-core>=0.3.0
+
+# Production server (alternative to uvicorn)
+gunicorn>=21.0.0
