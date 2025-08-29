@@ -344,7 +344,7 @@ async def handle_function_call(call_id: str, event: Dict[str, Any]):
         
         # Execute the function call via Composio
         result = composio_client.provider.handle_tool_calls(
-            user_id=HARDCODED_USER_ID,
+            user_id=os.environ.get("COMPOSIO_USER_ID"),
             response=chat_completion
         )
         
