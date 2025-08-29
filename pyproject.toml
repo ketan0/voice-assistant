@@ -1,0 +1,22 @@
+[project]
+name = "twilio-openai-voice-assistant"
+version = "0.1.0"
+description = "A high-performance phone-based voice assistant built with FastAPI that integrates Twilio with OpenAI's Realtime API"
+authors = [{name = "Ketan Agrawal"}]
+requires-python = ">=3.9"
+dependencies = [
+    "fastapi",
+    "uvicorn[standard]",
+    "openai",
+    "twilio",
+    "websockets",
+    "requests",
+    "python-multipart",
+    "python-dotenv",
+    "pydantic",
+    "composio-core",
+    "gunicorn",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["."]
