@@ -26,6 +26,7 @@ from twilio.rest import Client as TwilioClient
 from twilio.twiml.voice_response import VoiceResponse
 import uvicorn
 from dotenv import load_dotenv
+import composio
 from composio import Composio
 
 # Load environment variables from .env file
@@ -122,16 +123,14 @@ twilio_client = TwilioClient(
 
 # Initialize Composio
 composio_client = Composio()
-HARDCODED_USER_ID = "user"
-HARDCODED_TOOLKITS = ["GMAIL"]
 
 # Get tools from Composio
 composio_tools = []
 try:
     if os.getenv("COMPOSIO_API_KEY"):
-        composio_tools = composio_client.tools.get(
-            user_id=HARDCODED_USER_ID, 
-            toolkits=HARDCODED_TOOLKITS
+        composio_tools = composio.tools.get(
+            user_id=os.environ.get("COMPOSIO_USER_ID"), 
+            toolkits=["GMAIL"]
         )
         logger.info(f"Loaded {len(composio_tools)} Composio tools")
     else:
