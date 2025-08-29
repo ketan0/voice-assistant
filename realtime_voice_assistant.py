@@ -223,6 +223,7 @@ async def handle_websocket_connection(call_id: str):
                 session_update = {
                     "type": "session.update",
                     "session": {
+                        "type": "realtime",
                         "tools": realtime_tools,
                         "tool_choice": "auto"
                     }
