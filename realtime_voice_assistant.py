@@ -441,7 +441,7 @@ async def openai_webhook(request: Request):
                 logger.info(f"Successfully accepted call {call_id}")
                 
                 # Start WebSocket connection as async task
-                # asyncio.create_task(handle_websocket_connection(call_id))
+                asyncio.create_task(handle_websocket_connection(call_id))
                 
             else:
                 logger.error(f"Failed to accept call {call_id}: {response.text}")
