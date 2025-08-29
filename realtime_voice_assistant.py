@@ -128,7 +128,7 @@ composio_client = Composio()
 composio_tools = []
 try:
     if os.getenv("COMPOSIO_API_KEY"):
-        composio_tools = composio.tools.get(
+        composio_tools = composio_client.tools.get(
             user_id=os.environ.get("COMPOSIO_USER_ID"), 
             toolkits=["GMAIL"]
         )

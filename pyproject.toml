@@ -14,7 +14,7 @@ dependencies = [
     "python-multipart",
     "python-dotenv",
     "pydantic",
-    "composio-core",
+    "composio",
     "gunicorn",
 ]
 
